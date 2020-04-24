@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+	<script src="bundle/azure-storage.file.js"></script>
+	<script src="resources/jquery_341.min.js"></script>
+	
+	<link rel='stylesheet' href='resources/fontawesome-all.min.css'>
+
+<script>
+
+$( document ).ready( function()
+{
+	var ts = new Date().getTime();
+	
+	// ------------------------------------------------------
+	$( 'head' ).append( '<link rel="stylesheet" href="resources/appbuilder.css?ts=' + ts + '" type="text/css" />' );
+	
+	// ------------------------------------------------------
+	$.getScript( "resources/appbuilder.js?ts=" + ts ).done( function()
+	{
+		$( "#AppName"     ).on( "keypress", validateAppName );
+		$( "#PhoneNotify" ).on( "keypress", validatePhone );		
+	} );
+	
+	// ------------------------------------------------------
+	$.getScript( "resources/azure.js?ts=" + ts );
+} );
+
+</script>
+
+</head>
+
+<body>
+
+<table id="BuildAppTable" xborder="1px" cellpadding="0px" cellspacing="0px" colspacing="0px">
+	<tr>
+		<td style="width:200px;" class="label">Application Name</td>
+		<td><input id='AppName' class='input-fields' type="text" name="appName">
+		<span style="margin-left:10px;color:maroon;">(lowercase letters and numbers only)</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">Repository URL</td>
+		<td><input id='RepoURL' class='input-fields url-field' type="text" name="repoURL"></td>
+	</tr>
+	<tr>
+		<td class="label">Text Response to</td>
+		<td><input id='PhoneNotify' class='input-fields' type="text" name="phone"></td>
+	</tr>
+	<tr>
+		<td align="right">
+			<div style="float:right;" class="tm_fa_button" onclick='javascript:sendRequest();'>Build Me an App!</div>
+		</td>
+		<td style='height:25px !important;'>
+			<div id='ShortMessage'></div>
+		</td>
+	</tr>
+</table>
+
+<table style="height:20px;" id="build-output-container" xborder="1px" cellpadding="0px" cellspacing="0px" colspacing="0px">
+	<tr>
+		<td style="width:200px;"></td>
+		<td>
+			<div class="build-output" id="OutputResults">
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+<div class="build-output" id="ListFiles">
+
+	<label><b></b></label><input type="hidden" id="account" value="scriptureappstorage"/>
+	<label><b></b></label><input type="hidden" id="sas" value="?sv=2019-02-02&ss=f&srt=sco&sp=rl&se=2021-04-22T01:33:35Z&st=2020-04-21T17:33:35Z&spr=https&sig=XGCF6Ix%2BkOuT8d%2B00IJQKYHx8KO%2Fe%2Bdiq2qJDO9TaA8%3D" />
+
+	<a id="path"></a>
+	<div id="directoryFiles"></div>
+</div>
+
+
+</body>
+
+</html>

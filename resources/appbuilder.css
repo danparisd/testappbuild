@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+body, html
+{
+	height				:	100%							;
+	margin				:	10px							;
+	color				:	#333333							;
+	scroll-behavior		:	smooth							;
+	font-size			:	1em							;
+	font-family			:	Arial 					;
+}
+
+td
+{
+	font-size			:	1.2em							;
+	padding				:	5px								;
+	color				:	#666666							;
+}
+
+button
+{
+	font-size			:	1em								;
+	font-family			:	Forum-Regular					;
+	border				:	1px solid #666666				;
+	border-radius		:	4px								;
+}
+
+.input-fields
+{
+	width				:	250px							;
+	font-size			:	1.05em							;
+	border				:	1px solid #999999				;
+	border-radius		:	4px								;
+	padding				:	4px								;
+	background-color	:	#E6E6E6							;
+	color				:	#49606e							;
+}
+
+.url-field
+{
+	width				:	600px !important				;
+}
+
+.build-output
+{
+	min-width			:	400px							;
+	float				:	left							;
+	xborder				:	1px solid red					;
+	margin-top			:	20px 							;
+	margin-right		:	10px 							;
+	font-size			:	1.2em							;
+}
+
+.label
+{
+	font-weight			:	bold							;
+	text-align			:	right							;
+}
+
+img.animated-gif
+{
+  width: 10px;
+  height: auto;
+}
+
+.tm_fa_button
+{
+	padding				:	5px 14px 5px 12px !important	;
+	color				:	#333333				;
+	height				:	25px					;
+	margin-left			:	-3px					;
+	float				:	left					;
+
+	font-size 			:	1.08em				;
+	background-color	:	#CFD7D2				;
+	border-radius		:	8px					;
+	cursor				:	pointer				;
+}
+
+.tm_fa_button:hover
+{
+	color				:	#000000				;
+	background-color	:	#BFC7C2				;
+}
+
+.delete-row
+{
+	position		:	relative		;
+	top				:	7px				;
+	font-size		:	1.2em			;
+	cursor			:	pointer			;
+	color			:	#49606e			;
+	margin-left		:	5px			;
+	margin-left		:	10px			;
+}
+
+.delete-row:hover
+{
+	color		:	#731616			;
+}
